@@ -6,6 +6,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import com.varxyz.javacafe.dao.CategoryDao;
+import com.varxyz.javacafe.dao.MenuItemDao;
+import com.varxyz.javacafe.service.CategoryServiceImpl;
+import com.varxyz.javacafe.service.MenuItemServiceImpl;
+
 
 @Configuration
 @ComponentScan(basePackages = "com.varxyz.javacafe.dao")
@@ -28,4 +33,25 @@ public class DataSourceConfig {
 	public JdbcTemplate jdbcTemplate() {
 		return new JdbcTemplate(dataSource());
 	}
+	
+	@Bean
+	public CategoryDao categoryDao() {
+		return new CategoryDao(dataSource());
+	}
+	
+	@Bean
+	public CategoryServiceImpl categoryService () {
+		return new CategoryServiceImpl();
+	}
+	
+	@Bean
+	public MenuItemDao menuItemDao() {
+		return new MenuItemDao(dataSource());
+	}
+	
+	@Bean
+	public MenuItemServiceImpl menuItemService() {
+		return new MenuItemServiceImpl();
+	}
+	
 }
