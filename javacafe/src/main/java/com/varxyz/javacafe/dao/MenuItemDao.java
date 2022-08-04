@@ -18,7 +18,7 @@ public class MenuItemDao {
 	
 	
 	public void addMenuItem(MenuItem menuItem) {
-		String sql = "INSERT INTO Category (menuName, menuSize, menuPrice, imgUrl)"
+		String sql = "INSERT INTO MenuItem (menuName, menuSize, menuPrice, imgUrl)"
 				+ " VALUES(?,?,?,?)";
 		jdbcTemplate.update(sql, menuItem.getMenuName(), menuItem.getMenuSize(),
 				menuItem.getMenuPrice(), menuItem.getImgUrl());

@@ -14,8 +14,8 @@ public class MenuItemRowMapper implements RowMapper<MenuItem>{
 	public MenuItem mapRow(ResultSet rs, int rowNum) throws SQLException {
 		MenuItem menuItem = new MenuItem();
 		menuItem.setMid(rs.getLong("mid"));
-		menuItem.setCategory(new Category(rs.getLong("cid")));
-		menuItem.setMenuname(rs.getString("menuName"));
+		menuItem.setCategory(new Category(rs.getLong("cateFk")));
+		menuItem.setMenuName(rs.getString("menuName"));
 		menuItem.setMenuSize(rs.getString("MenuSize"));
 		menuItem.setMenuPrice(rs.getDouble("MenuPrice"));
 		menuItem.setImgUrl(rs.getString("imgUrl"));

@@ -6,3 +6,4 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 		
 </beans>
+<!-- 파일 업로드 경로를 설정 -->
