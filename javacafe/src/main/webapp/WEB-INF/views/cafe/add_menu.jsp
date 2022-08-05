@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>파일 업로드 하기</title>
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/default.css'/>"/>
 <script src = "http://code.jquery.com/jquery-latest.js"></script>
 <script>
@@ -22,11 +22,9 @@
 
 <form:form action="add_menu" method="post" modelAttribute="menuItem" enctype="multipart/form-data"> <!--enctype 해당 폼이 multipart형식임을 알려준다 -->
 	<label>카테고리선택</label>
-	<select name="cateName">
-	<c:forEach var="view" items="${menuCategoryList}">
-		<option value="${view.cateName}">${view.cateName}</option>			
-	</c:forEach>				
-	</select><br>
+	<form:select name="cateFk" path="cateFk" value="cateFk">
+		<form:options items ="${CategoryProviderList }" itemValue="cid" itemLabel="cateName"/>		
+	</form:select><br>
 	<label>메뉴</label>
 	<form:input path="menuName" name="menuName"/><br>
 	<label>size</label>
@@ -38,7 +36,10 @@
 	<label>가격</label>
 	<form:input path="menuPrice"/><br>
 	<label>이미지</label>
-	<form:input type="file" name="file" path="imgUrl" value="파일 추가" onClick="fn_addFile()"/><br>
+	<form:input path="file" type="file" value="파일 추가" onClick="fn_addFile()"/><br>
+	  <div id="d_file">
+          
+       </div>
 	<button type="submit">추가하기</button>
 </form:form>
 

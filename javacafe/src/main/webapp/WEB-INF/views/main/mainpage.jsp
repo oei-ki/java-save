@@ -6,16 +6,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>파일 업로드 하기</title>
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/default.css'/>"/>
+<script src = "http://code.jquery.com/jquery-latest.js"></script>
 </head>
 <body>
-<h3>관리자 모드? 카테고리 메뉴 추가기능 구현</h3>
-<form:form method="post" modelAttribute="category">
-	<label>대분류 추가</label>
-	<form:input path="cateType"/>
-	<label>중분류 추가</label>
-	<form:input path="cateName"/>
+<h3>주문할 곳!</h3>
+
+<form:form action="mainpage" method="post" > <!--enctype 해당 폼이 multipart형식임을 알려준다 -->
+
 </form:form>
+
 </body>
 </html>

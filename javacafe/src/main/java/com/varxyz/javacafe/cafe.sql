@@ -22,3 +22,5 @@ DROP TABLE Category;
 
 SELECT * FROM MenuItem;
 SELECT * FROM Category;
+
+DELETE FROM Category WHERE cid = 101;

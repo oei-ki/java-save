@@ -23,4 +23,12 @@ public class MenuItemServiceImpl implements MenuItemService {
 		return menuItemDao.getMenuItem();
 	}
 
+	@Override
+	public String getCategoryName(long cateFk) {
+		return menuItemDao.getCategoryName(cateFk);
+	}
+
+
+
+
 }
